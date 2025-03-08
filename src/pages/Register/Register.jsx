@@ -1,5 +1,6 @@
 import { useState } from "react"
 import supabase from "../../helper/supabaseClient";
+import styles from "./Register.modules.css";
 
 export const Register = () => {
     const [email, setEmail] = useState('');
