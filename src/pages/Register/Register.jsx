@@ -15,7 +15,7 @@ export const Register = () => {
         const {data, error} = await supabase.auth.signUp({
             email: email, 
             password: password, 
-            username: username
+            displayName: username
         });
 
         if (error) {
