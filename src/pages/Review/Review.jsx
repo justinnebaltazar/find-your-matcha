@@ -1,4 +1,4 @@
-import styles from "./Review.modules.css";
+import styles from "./Review.module.css";
 
 export const Review = () => {
     <div>
