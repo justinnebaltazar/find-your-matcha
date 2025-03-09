@@ -26,15 +26,16 @@
     padding: 0;
 }
 
-.navLinks li {
-    margin-right: 1rem;
-    
-
-}
-
 .navLinks a {
     text-decoration: none;
 }
+
+.navLinks li {
+    margin-right: 1rem;
+    font-size: 25px;
+    text-decoration: none;
+}
+
 
 .navRight{
     display: flex;

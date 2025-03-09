@@ -9,9 +9,11 @@ import Navbar from "./pages/Navbar/Navbar";
 
 function App() {
   return (
-    <div>
-        <Navbar/>
+
+
     <BrowserRouter>
+    <div>
+    <Navbar/>
       <Routes>
         {/* home */}
         <Route path="/" element={<Home/>}/>
@@ -33,8 +35,8 @@ function App() {
         }/>
 
       </Routes>
+      </div>
     </BrowserRouter>
-    </div>
 
   )
 }
