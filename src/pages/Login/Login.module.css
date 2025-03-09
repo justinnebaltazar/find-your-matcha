@@ -34,6 +34,7 @@
     padding-top: 160px;
     text-align: center;
     color: #834F4E;
+    margin-left: 40px;
 }
 
 .link {
@@ -44,10 +45,11 @@
 
 .button {
     background-color: #834F4E;
+    margin-left: 40px;
     color: #F9D0CC;
     font-size: 15px;
     border: none;
-    width: 70%;
+    width: 80%;
     height: 25px;
     box-sizing: border-box;
     border-radius: 5px;
@@ -63,11 +65,11 @@
 }
 
 .searchbar {
-    width: 100%;
-    padding: 10px;
-    font-size: 12px;
+    width: 120%;
+    padding: 15px;
+    font-size: 15px;
     border: 3px solid #834F4E;
-    background-color: #37532B ;
+    background-color: #CBD4C5 ;
     color: white;
     border-radius: 10px;
     box-sizing: border-box;
