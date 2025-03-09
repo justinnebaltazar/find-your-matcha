@@ -1,0 +1,8 @@
+.body {
+    background-color:#F9DDD8;
+}
+
+.grid {
+    background-image: linear-gradient(to right, #F3BABA 1px, transparent 1px),
+    linear-gradient(to bottom, #f3BABA 1px, transparent 1px);
+}
