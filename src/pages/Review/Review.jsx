@@ -1,7 +1,10 @@
+import React from 'react'
 import styles from "./Review.module.css";
 
-export const Review = () => {
-    <div>
-        <h1>Leave a review</h1>
-    </div>
+const Review = () => {
+  return (
+    <div>Review</div>
+  )
 }
+
+export default Review
