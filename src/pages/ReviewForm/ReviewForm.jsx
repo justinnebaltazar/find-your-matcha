@@ -52,17 +52,27 @@ const ReviewForm = ({ placeId }) => {
         <div className={styles.form}>
           <h2>Leave a Review</h2>
 
-          <div className={styles.input}>
-            <label>Name</label>
-            <input
-              type="text"
-              className={styles.inputField}
-              placeholder="Please enter your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
+       
+    <div style="position:absolute;right:0px;background-color:blue;width:25%;height:100px;">
+      <form>
+      <div className={styles.form}>
+       
+        <h2>leave a review</h2>
+        <div className={styles.input}>
+          <label>name</label>
+          <input
+            type="text"
+            className={styles.inputField}
+            placeholder="please enter your name"
+            required
+          />
+        </div>
+        <div className={styles.input}>
+    <label>overall matcha rating</label>
+    <div className={styles.ratingContainer}>
+    <Rating count={5} defaultRating={0} />
+    </div>
+</div>
 
           <div className={styles.input}>
             <label>Overall Matcha Rating</label>
@@ -91,6 +101,12 @@ const ReviewForm = ({ placeId }) => {
           {success && <p className={styles.successMessage}>Review submitted successfully!</p>}
         </div>
       </form>
+<<<<<<< HEAD
+=======
+      </div>
+
+
+>>>>>>> 346aa72e89ea1a099757a365b793c59928265945
     </section>
   );
 };
