@@ -3,7 +3,7 @@ import styles from "./Rating.module.css";
 
 const DEFAULT_COUNT = 5;
 const DEFAULT_ICON = "\u2605";  
-const DEFAULT_UNSELECTED_COLOR = "grey";
+const DEFAULT_UNSELECTED_COLOR = "#EFEFEF";
 const DEFAULT_COLOR = "#5B744B";
 
 export default function Rating({ count = DEFAULT_COUNT, defaultRating = 0, icon = DEFAULT_ICON, color = DEFAULT_COLOR, iconSize = 14 }) {

@@ -34,10 +34,17 @@ export const Login = () => {
     
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Login</h2>
-            <br></br>
-            <p>{message && <>{message}</>}</p>
-            <form onSubmit={handleSubmit}>
+            <div className={styles.left}>
+                <img 
+                src="images/loginwelcome.jpg"
+                className={styles.logo}></img>
+            </div>
+
+            <div className={styles.right}>
+                <h2 className={styles.title}>Login</h2>
+                <br></br>
+                <p>{message && <>{message}</>}</p>
+                <form onSubmit={handleSubmit}>
                 <input
                 className={styles.searchbar}
                 onChange={(e) => setEmail(e.target.value)}
@@ -56,11 +63,13 @@ export const Login = () => {
                 <br></br>
 
                 <button className={styles.button} type="submit">Login</button>
-            </form>
-            <br></br>
-            <br></br>
-            <p>Don't have an account? <Link className={styles.link} to='/register'>Register</Link></p>
-
+                </form>
+                <br></br>
+                <br></br>
+                <p>Don't have an account? <Link className={styles.link} to='/register'>Register</Link></p>
+            </div>
         </div>
+
+        
     )
 }
