@@ -1,13 +1,14 @@
 import { Link } from "react-router";
 import styles from "./Home.module.css";
+import homepage from "/images/Homepage.jpg";
 
-const Circle = ({ position }) => {
-    return <div className={styles.circles} style={position}></div>
-}
+
 export const Home = () => {
     return (
         <div className={styles.container}>
-            <Circle position={{marginLeft: "", marginTop:"50px"}}></Circle>
+           <h1 className={styles.title}>Find your matcha</h1>
+           {/*<img src={homepage}></img>*/}
         </div>
+
     )
 }
