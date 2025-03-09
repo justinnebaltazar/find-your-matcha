@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: flex-center;
+    
+}
+
+.rating {
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+
+.rating:hover {
+    transform: scale(1.1);
+}
