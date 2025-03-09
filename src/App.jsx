@@ -7,7 +7,7 @@ import { Register } from "./pages/Register/Register";
 import Wrapper from "./pages/Wrapper/Wrapper";
 import Navbar from "./pages/Navbar/Navbar";
 import Map from "./pages/Map/Map";
-import Review from "./pages/Review/Review";
+import ReviewForm from "./pages/ReviewForm/ReviewForm";
 
 function App() {
   return (
@@ -42,9 +42,9 @@ function App() {
 
         <Route path="/map" element={<Map/>}/>
 
-        <Route path="/review" element={
+        <Route path="/reviewform" element={
           /* Wrapped components are not accesible unless authenticated */
-            <Review/>
+            <ReviewForm/>
 
         }/>
 
