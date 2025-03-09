@@ -36,22 +36,31 @@ export const Register = () => {
     return (
         <div className={styles.container}>
 
-            <h2 className={styles.title}>Register</h2>
+
             <br></br>
             {message && <>{message}</>}
 
-            <form onSubmit={handleSubmit}>
+<div className={styles.right}>
+   
+            <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.box}>
+            <h2 className={styles.title}>register</h2>
+
+</div>
+          
             <div className={styles.input}>
-            <label>Email</label>
+            <label>email</label>
                 <input 
+                className={styles.inputField}
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="email" placeholder="Email" required/>
                 </div>
 
                 <div className={styles.input}>
-                <label>Username</label>
+                <label>username</label>
                 <input
+                 className={styles.inputField}
                 onChange={(e) => setUserName(e.target.value)}
                 value={username}
                 type="username" placeholder="Username" required
@@ -59,8 +68,9 @@ export const Register = () => {
                 </div>
 
                 <div className={styles.input}>
-                <label>Password</label>
+                <label>password</label>
                 <input 
+                 className={styles.inputField}
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 type="password" placeholder="Password" required/>
@@ -68,10 +78,11 @@ export const Register = () => {
             
 
              
-                <button className={styles.button} type="submit">Create Account</button>
+                <button className={styles.button} type="submit">create account</button>
+                <p>already have an account? <Link className={styles.links} to='/login'>login</Link></p>
+               
                 </form>
-     
-            <p>Already have an account? <Link to='/login'>Login.</Link></p>
+                </div>
             </div>
   
     )

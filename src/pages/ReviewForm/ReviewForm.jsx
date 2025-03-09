@@ -8,7 +8,8 @@ const ReviewForm = () => {
     <section className={styles.review}>
     
 
-        
+       
+    <div style="position:absolute;right:0px;background-color:blue;width:25%;height:100px;">
       <form>
       <div className={styles.form}>
        
@@ -47,6 +48,7 @@ const ReviewForm = () => {
         </div>
         
       </form>
+      </div>
 
 
     </section>
