@@ -1,40 +1,36 @@
-import React from 'react'
-import styles from "./Navbar.module.css"
-import logo from "/public/images/logo.jpeg"
+import React from "react";
+import styles from "./Navbar.module.css";
+import logo from "/public/images/logo.jpeg";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-        <div className={styles.navLeft}>
-            <img src={logo}>
-            </img>
-       
-        </div>
-     
-        <div className={styles.navCenter}>
-            <ul className={styles.navLinks}>
-                <li>
-                    <a href="/cafes">cafes</a>
-                </li>
-                <li>
-                    <a href="/review">write a review</a>
-                </li>
-                <li>
-                    <a href="/about">about us</a>
-                </li>
-                <li>
-                    <a href="/contact">contact</a>
-                </li>
-            </ul>
-        </div>
-      
+      <div className={styles.navLeft}>
+      <img src={logo}></img>
+      </div>
 
+      <div className={styles.navCenter}>
+        <ul className={styles.navLinks}>
+          <li>
+            <Link to='/cafes'>cafes</Link>
+          </li>
+          <li>
+            <Link to='/reviews'>write a review</Link>
+          </li>
 
+          <li>
+            <Link to='/register'>register</Link>
+          </li>
 
-
-
+          <li>
+            <Link to='/login'>login</Link>
+          </li>
+         
+        </ul>
+      </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
