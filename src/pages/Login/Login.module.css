@@ -1,0 +1,39 @@
+.container {
+    background-color: #F9D0CC;
+    height: 100vh;
+    text-align: center;
+
+    
+}
+
+.title {
+    padding-top: 150px;
+    text-align: center;
+    color: #834F4E
+}
+
+.link {
+    color: #834F4E;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.button {
+    background-color: #834F4E;
+    color: #F9D0CC;
+    font-size: 15px;
+    border: none;
+    width: 10%;
+    height: 25px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+    
+
+}
+
+.button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+    background-color: #723C3B;
+}

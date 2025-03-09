@@ -33,25 +33,31 @@ export const Login = () => {
     };
     
     return (
-        <div>
-            <h2>Login</h2>
+        <div className={styles.container}>
+            <h2 className={styles.title}>Login</h2>
             <br></br>
-            {message && <>{message}</>}
+            <p>{message && <>{message}</>}</p>
             <form onSubmit={handleSubmit}>
-                <input 
+                <input
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="email" placeholder="Email" required/>
 
+                <br></br>
+                <br></br>
                 <input 
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 type="password" placeholder="Password" required/>
             
+                <br></br>
+                <br></br>
 
-                <button type="submit">Login</button>
+                <button className={styles.button} type="submit">Login</button>
             </form>
-            <p>Don't have an account? <Link to='/register'>Register.</Link></p>
+            <br></br>
+            <br></br>
+            <p>Don't have an account? <Link className={styles.link} to='/register'>Register</Link></p>
         </div>
     )
 }
