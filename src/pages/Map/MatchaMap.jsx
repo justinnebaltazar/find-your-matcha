@@ -1,85 +1,114 @@
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 import supabase from "../../helper/supabaseClient";
 import styles from "./MatchaMap.module.css";
 
-const containerStyle = { width: "100%", height: "400px"  };
-const center = { lat: 49.2827, lng: -123.116226 };
+// Set Mapbox Access Token
+mapboxgl.accessToken = "pk.eyJ1IjoianVzdGlubmViIiwiYSI6ImNtODFocGo3NjE0eWwyd3EzYXRpY2h1bmQifQ.r5PGdaSEWlCd0Tj62FRw9Q";
+
+const center = [-123.116226, 49.2827]; // [longitude, latitude]
 
 function MatchaMap() {
   const [matchaPlaces, setMatchaPlaces] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const markers = useRef([]); // Store markers for cleanup
 
-  // fetch from Supabase
+  // Initialize Map
   useEffect(() => {
-    const fetchSavedPlaces = async () => {
-      const { data, error } = await supabase.from("matcha_places").select("*");
-      if (error) console.error("Error fetching places:", error);
-      else setMatchaPlaces(data);
-    };
+    if (map.current || !mapContainer.current) return;
+
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: center,
+      zoom: 12,
+    });
+
+    map.current.addControl(new mapboxgl.NavigationControl());
+  }, []);
+
+  // Fetch matcha places from Supabase
+  const fetchSavedPlaces = async () => {
+    const { data, error } = await supabase.from("matcha_places").select("*");
+    if (error) console.error("Error fetching places:", error);
+    else setMatchaPlaces(data);
+  };
+
+  useEffect(() => {
     fetchSavedPlaces();
   }, []);
 
-  // fetch from Google Places API and save to Supabase
-  const fetchFromGooglePlaces = async () => {
-    const service = new window.google.maps.places.PlacesService(
-      document.createElement("div")
-    );
+  // Add markers to the map
+  useEffect(() => {
+    if (!map.current) return;
 
-    const request = { location: center, radius: 5000, keyword: "matcha" };
+    // Clear existing markers
+    markers.current.forEach((marker) => marker.remove());
+    markers.current = [];
 
-    service.nearbySearch(request, async (results, status) => {
-      if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-        setMatchaPlaces(results);
-
-        for (const place of results) {
-          const { error } = await supabase.from("matcha_places").upsert([
-            {
-              place_id: place.place_id,
-              name: place.name,
-              latitude: place.geometry.location.lat(),
-              longitude: place.geometry.location.lng(),
-              address: place.vicinity,
-            }
-          ]);
-          if (error) console.error("Error saving place:", error);
-        }
-      }
+    // Add new markers
+    matchaPlaces.forEach((place) => {
+      const marker = new mapboxgl.Marker()
+        .setLngLat([place.longitude, place.latitude])
+        .setPopup(new mapboxgl.Popup().setText(place.name))
+        .addTo(map.current);
+      markers.current.push(marker);
     });
+  }, [matchaPlaces]);
+
+  // Search for matcha places using Mapbox Geocoding API
+  const searchMatchaPlaces = async () => {
+    if (!searchQuery) return;
+
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchQuery}.json?proximity=${center[0]},${center[1]}&access_token=${mapboxgl.accessToken}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const features = data.features;
+
+      if (features.length) {
+        const newCenter = features[0].center;
+        map.current.flyTo({ center: newCenter, zoom: 14 });
+
+        // Clear existing markers
+        markers.current.forEach((marker) => marker.remove());
+        markers.current = [];
+
+        // Add new marker
+        const marker = new mapboxgl.Marker()
+          .setLngLat(newCenter)
+          .setPopup(new mapboxgl.Popup().setText(features[0].place_name))
+          .addTo(map.current);
+        markers.current.push(marker);
+      }
+    } catch (error) {
+      console.error("Error searching places:", error);
+    }
   };
 
-  // filter places by search input
-  const filteredPlaces = matchaPlaces.filter((place) =>
-    place.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
   return (
-    <LoadScript googleMapsApiKey="GOOGLE_MAP_API_KEY" libraries={["places"]}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.buttonsContainer}>
-            {/* search bar */}
-            <input
-              className={styles.searchBar}
-              type="text"
-              placeholder="Search matcha places..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-        
-            {/* button to find new matcha places */}
-            <button className={styles.findButton} onClick={fetchFromGooglePlaces}>Find Matcha Places</button>
+    <div className={styles.container}>
+      {/* search bar */}
+      <div>
+        <input className={styles.searchBar}
+          type="text"
+          placeholder="Search matcha places..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
 
-          </div>
-        {/* map */}
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
-          {filteredPlaces.map((place) => (
-            <Marker key={place.place_id} position={{ lat: place.latitude, lng: place.longitude }} />
-          ))}
-        </GoogleMap>
-        </div>
+        />
+        <button className={styles.findButton} onClick={searchMatchaPlaces}>
+          Search
+        </button>
       </div>
-    </LoadScript>
+
+      {/* map container */}
+      <div ref={mapContainer} className={styles.map} />
+    </div>
   );
 }
 

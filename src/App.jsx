@@ -8,6 +8,8 @@ import Wrapper from "./pages/Wrapper/Wrapper";
 import Navbar from "./pages/Navbar/Navbar";
 import ReviewForm from "./pages/ReviewForm/ReviewForm";
 import MatchaMap from "./pages/Map/MatchaMap";
+import MatchaReviews from "./pages/Reviews/Reviews";
+import MatchaReviewsWrapper from "./pages/Reviews/MatchaReviewsWrapper";
 
 function App() {
   return (
@@ -48,6 +50,9 @@ function App() {
             <ReviewForm/>
 
         }/>
+
+        <Route path="/matchareviews" element={<MatchaReviewsWrapper />} />
+
 
       </Routes>
       </div>
