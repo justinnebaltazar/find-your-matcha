@@ -54,3 +54,7 @@
 .links:hover {
     color: #F9D0CC;
 }
+
+.logo {
+    transform: scale(1.3);
+}
