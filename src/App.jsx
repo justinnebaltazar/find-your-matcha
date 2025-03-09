@@ -5,9 +5,12 @@ import { Login } from "./pages/Login/Login";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { Register } from "./pages/Register/Register";
 import Wrapper from "./pages/Wrapper/Wrapper";
+import Navbar from "./pages/Navbar/Navbar";
 
 function App() {
   return (
+    <div>
+        <Navbar/>
     <BrowserRouter>
       <Routes>
         {/* home */}
@@ -31,6 +34,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </div>
 
   )
 }
