@@ -93,7 +93,7 @@ function MatchaMap() {
   return (
     <div className={styles.container}>
       {/* search bar */}
-      <div>
+      <div className={styles.buttonsContainer}>
         <input className={styles.searchBar}
           type="text"
           placeholder="Search matcha places..."
