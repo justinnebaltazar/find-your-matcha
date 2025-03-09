@@ -5,7 +5,7 @@ import supabase from "../../helper/supabaseClient";
 import styles from "./MatchaMap.module.css";
 
 // Set Mapbox Access Token
-mapboxgl.accessToken = "pk.eyJ1IjoianVzdGlubmViIiwiYSI6ImNtODFocGo3NjE0eWwyd3EzYXRpY2h1bmQifQ.r5PGdaSEWlCd0Tj62FRw9Q";
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_KEY;
 
 const center = [-123.116226, 49.2827]; // [longitude, latitude]
 
