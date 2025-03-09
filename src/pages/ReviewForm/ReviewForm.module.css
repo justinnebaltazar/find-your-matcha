@@ -4,14 +4,11 @@
     background-image: linear-gradient(to right, #F3BABA 3px, transparent 3px),
     linear-gradient(to bottom, #f3BABA 3px, transparent 3px);
     background-size: 100px 100px;
-
-
     height: 100vh;
     align-items: center;
     justify-content: center;
-    display: flex;
+    display:flex;
 }
-
 
 
 .form {
@@ -27,6 +24,7 @@
 .h2 {
     font-size: 30px;
     text-align: center;
+
 }
 
 .input {
@@ -47,16 +45,39 @@
     resize: none;
 }
 
+.buttonContainer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px 20px;
+    transform: scale(1.7);
+}
+
 .button {
+    line-height: 20px;
+    border-radius: 7px;
     background-color: #5B744B;
     display: inline-block;
-    text-align: center;
     color: white;
-    font-size: 16px;
-    font-weight: 50px;
+    font-size: 10px;
     text-decoration: none;
-    border-radius: 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-weight: bold;
 }
+
+label {
+    font-weight: bold;
+}
+
+.ratingContainer {
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 60px;
+    transform: scale(2);
+    margin-right: 20px;
+}
+
 
 
 

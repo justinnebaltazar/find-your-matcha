@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./ReviewForm.module.css";
 import rec from "/public/images/rec.jpg";
+import Rating from "../Rating/Rating";
 
 const ReviewForm = () => {
   return (
     <section className={styles.review}>
+    
+
         
       <form>
       <div className={styles.form}>
@@ -20,6 +23,13 @@ const ReviewForm = () => {
           />
         </div>
         <div className={styles.input}>
+    <label>overall matcha rating</label>
+    <div className={styles.ratingContainer}>
+    <Rating count={5} defaultRating={0} />
+    </div>
+</div>
+
+        <div className={styles.input}>
 
           <label>message</label>
           <textarea
@@ -30,10 +40,14 @@ const ReviewForm = () => {
           ></textarea>
     
         </div>
+        <div className={styles.buttonContainer}>
+
         <button className={styles.button}>submit</button>
+        </div>
         </div>
         
       </form>
+
 
     </section>
   );
