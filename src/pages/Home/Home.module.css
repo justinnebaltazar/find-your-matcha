@@ -1,13 +1,48 @@
 /* temporary styling */
-
+* {
+    margin: 0; 
+}
 .container {
     height: 100vh;
     background-image: url('C:/Users/rioma/cmd-f/public/images/Homepage.jpg');
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:20px;
 }
 
 .title {
-    font-size: 50px;
-    margin: 0px;
+    color:white; 
+    width: 70%;
+    background-color: #37532B;
+    font-size: 45px;
+    text-align: center;
+    border-radius: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
+.desc{
+    color: grey;
+    padding: 20px;
+
+}
+
+.buttonsContainer {
+   display: flex;
+   gap: 20px;
+   padding: 20px;
+}
+
+.buttons {
+    font-size: 20px;
+    background-color: #F9D0CC;
+    border: none;
+    color: white;
+    display: flex;
+    width: auto;
+    height: auto;
+    padding: 20px 40px;
+    border-radius: 10px;
+    cursor: pointer;
 }
