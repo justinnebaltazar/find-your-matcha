@@ -37,3 +37,14 @@
     animation-duration: 500ms;
     background-color: #723C3B;
 }
+
+.searchbar {
+    width: 30%;
+    padding: 10px;
+    font-size: 12px;
+    border: 3px solid #834F4E;
+    background-color: #37532B ;
+    color: white;
+    border-radius: 10px;
+
+}
