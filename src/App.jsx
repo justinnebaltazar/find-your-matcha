@@ -10,6 +10,7 @@ import ReviewForm from "./pages/ReviewForm/ReviewForm";
 import MatchaMap from "./pages/Map/MatchaMap";
 import MatchaReviews from "./pages/Reviews/Reviews";
 import MatchaReviewsWrapper from "./pages/Reviews/MatchaReviewsWrapper";
+import { Cafes } from "./pages/Cafes/Cafes";
 
 function App() {
   return (
@@ -53,7 +54,8 @@ function App() {
 
         <Route path="/matchareviews" element={<MatchaReviewsWrapper />} />
 
-
+        <Route path="/cafes" element={<Cafes />} />
+        
       </Routes>
       </div>
     </BrowserRouter>
