@@ -26,14 +26,16 @@
     padding: 0;
 }
 
-.navLinks link {
+.navLinks .links {
     text-decoration: none;
+    color: white;
 }
 
 .navLinks li {
     margin-right: 1rem;
     font-size: 25px;
     text-decoration: none;
+    font-weight: 500;
 }
 
 
@@ -47,5 +49,8 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
 
+.links:hover {
+    color: #F9D0CC;
 }

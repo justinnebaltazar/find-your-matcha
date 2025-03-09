@@ -17,7 +17,7 @@ export const Home = () => {
             <div className={styles.buttonsContainer}>
                 <ul className={styles.buttons}>
                     <li>
-                        <Link className={styles.links} to="/login">log in</Link>
+                        <Link className={styles.links} to="/login">login</Link>
                     </li>
                 </ul>
                 <ul className={styles.buttons}>

@@ -57,18 +57,20 @@ function MatchaMap() {
     <LoadScript googleMapsApiKey="GOOGLE_MAP_API_KEY" libraries={["places"]}>
       <div className={styles.container}>
         <div className={styles.content}>
-        {/* search bar */}
-        <input
-          type="text"
-          placeholder="Search matcha places..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          style={{ width: "100%", padding: "10px", marginBottom: "10px", fontSize: "16px" }}
-        />
+          <div className={styles.buttonsContainer}>
+            {/* search bar */}
+            <input
+              className={styles.searchBar}
+              type="text"
+              placeholder="Search matcha places..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
         
-        {/* button to find new matcha places */}
-        <button className={styles.findButton} onClick={fetchFromGooglePlaces}>Find Matcha Places</button>
+            {/* button to find new matcha places */}
+            <button className={styles.findButton} onClick={fetchFromGooglePlaces}>Find Matcha Places</button>
 
+          </div>
         {/* map */}
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
           {filteredPlaces.map((place) => (

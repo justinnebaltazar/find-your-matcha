@@ -13,18 +13,18 @@ const Navbar = () => {
       <div className={styles.navCenter}>
         <ul className={styles.navLinks}>
           <li>
-            <Link to='/cafes'>cafes</Link>
+            <Link className={styles.links} to='/cafes'>cafes</Link>
           </li>
           <li>
-            <Link to='/reviewform'>write a review</Link>
-          </li>
-
-          <li>
-            <Link to='/register'>register</Link>
+            <Link className={styles.links} to='/reviewform'>write a review</Link>
           </li>
 
           <li>
-            <Link to='/login'>login</Link>
+            <Link className={styles.links} to='/register'>register</Link>
+          </li>
+
+          <li>
+            <Link className={styles.links} to='/login'>login</Link>
           </li>
          
         </ul>
