@@ -1,12 +1,13 @@
 import { useState } from "react"
 import supabase from "../../helper/supabaseClient";
 import styles from "./Register.module.css";
+import { Link } from "react-router-dom";
 
 export const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [username, setUserName] = useState(''); 
     const [message, setMessage] = useState('');
+    const [username, setUserName] = useState(''); 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -57,7 +58,7 @@ export const Register = () => {
 
                 <button type="submit">Create Account</button>
             </form>
-
+            <p>Already have an account? <Link to='/login'>Login.</Link></p>
         </div>
     )
 }
