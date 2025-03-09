@@ -6,8 +6,8 @@ import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { Register } from "./pages/Register/Register";
 import Wrapper from "./pages/Wrapper/Wrapper";
 import Navbar from "./pages/Navbar/Navbar";
-import Map from "./pages/Map/Map";
 import Review from "./pages/Review/Review";
+import MatchaMap from "./pages/Map/MatchaMap";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <>
             <Navbar/>
             <Home/>
+            <MatchaMap/>
           </>
       }/>
 
@@ -40,7 +41,7 @@ function App() {
           </Wrapper>
         }/>
 
-        <Route path="/map" element={<Map/>}/>
+        <Route path="/map" element={<MatchaMap/>}/>
 
         <Route path="/review" element={
           /* Wrapped components are not accesible unless authenticated */

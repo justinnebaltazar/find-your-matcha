@@ -1,0 +1,25 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px;
+    margin: 0 auto; 
+    text-align: center; 
+    height: 100vh;
+    background-color: #A9B7A0; 
+}
+
+.findButton {
+    max-width: 200px;
+    width: 100%; 
+    padding: 10px;
+    margin: 10px 0px; 
+    text-align: center;
+}
+
+.content {
+    width: 80%;
+}
+
