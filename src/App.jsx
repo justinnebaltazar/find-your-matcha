@@ -6,7 +6,7 @@ import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { Register } from "./pages/Register/Register";
 import Wrapper from "./pages/Wrapper/Wrapper";
 import Navbar from "./pages/Navbar/Navbar";
-import Review from "./pages/Review/Review";
+import ReviewForm from "./pages/ReviewForm/ReviewForm";
 import MatchaMap from "./pages/Map/MatchaMap";
 
 function App() {
