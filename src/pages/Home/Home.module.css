@@ -4,7 +4,7 @@
 }
 .container {
     height: 100vh;
-    background-image: url('public/images/Homepage.jpg');
+    background-image: url('public/images/Homepage.png');
     display: flex;
     flex-direction: column;
     justify-content: center;
