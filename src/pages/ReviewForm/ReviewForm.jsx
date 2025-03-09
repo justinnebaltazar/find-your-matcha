@@ -6,6 +6,8 @@ import Rating from "../Rating/Rating";
 const ReviewForm = () => {
   return (
     <section className={styles.review}>
+    
+
         
       <form>
       <div className={styles.form}>
@@ -45,6 +47,7 @@ const ReviewForm = () => {
         </div>
         
       </form>
+
 
     </section>
   );
