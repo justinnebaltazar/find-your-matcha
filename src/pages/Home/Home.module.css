@@ -2,14 +2,12 @@
 
 .container {
     height: 100vh;
-    background-color: #ECF0E7;
+    background-image: url('C:/Users/rioma/cmd-f/public/images/Homepage.jpg');
+
 }
 
-.circles {
-    background-color: #DDE3D9;
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.title {
+    font-size: 50px;
+    margin: 0px;
 
 }
