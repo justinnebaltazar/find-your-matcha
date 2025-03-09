@@ -6,6 +6,7 @@ import { Dashboard } from "./pages/Dashboard/Dashboard";
 import { Register } from "./pages/Register/Register";
 import Wrapper from "./pages/Wrapper/Wrapper";
 import Navbar from "./pages/Navbar/Navbar";
+import Map from "./pages/Map/Map";
 
 function App() {
   return (
@@ -13,10 +14,14 @@ function App() {
 
     <BrowserRouter>
     <div>
-    <Navbar/>
       <Routes>
         {/* home */}
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={
+          <>
+            <Navbar/>
+            <Home/>
+          </>
+      }/>
 
         {/* register */}
         <Route
@@ -33,6 +38,8 @@ function App() {
             <Dashboard/>
           </Wrapper>
         }/>
+
+        <Route path="/map" element={<Map/>}/>
 
       </Routes>
       </div>
