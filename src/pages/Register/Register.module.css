@@ -1,0 +1,63 @@
+* {
+    margin: 0; 
+}
+.container {
+    height: 100vh;
+    background-image: url('public/images/register1.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+}
+  
+
+.h2 {
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.input {
+    margin-top:20px;
+}
+
+.inputField {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    outline: none;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 15px;
+    margin-top:8px;
+    resize: none;
+}
+
+.buttonContainer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px 20px;
+    transform: scale(1.7);
+}
+
+.button {
+    line-height: 20px;
+    border-radius: 7px;
+    background-color: #5B744B;
+    display: inline-block;
+    color: white;
+    font-size: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-weight: bold;
+}
+
+label {
+    font-weight: bold;
+}
+

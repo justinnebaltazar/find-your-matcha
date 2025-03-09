@@ -34,31 +34,45 @@ export const Register = () => {
     };
       
     return (
-        <div>
-            <h2>Register</h2>
+        <div className={styles.container}>
+
+            <h2 className={styles.title}>Register</h2>
             <br></br>
             {message && <>{message}</>}
+
             <form onSubmit={handleSubmit}>
+            <div className={styles.input}>
+            <label>Email</label>
                 <input 
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="email" placeholder="Email" required/>
+                </div>
 
+                <div className={styles.input}>
+                <label>Username</label>
                 <input
                 onChange={(e) => setUserName(e.target.value)}
                 value={username}
                 type="username" placeholder="Username" required
                 />
+                </div>
 
+                <div className={styles.input}>
+                <label>Password</label>
                 <input 
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 type="password" placeholder="Password" required/>
+                 </div>
             
 
-                <button type="submit">Create Account</button>
-            </form>
+             
+                <button className={styles.button} type="submit">Create Account</button>
+                </form>
+     
             <p>Already have an account? <Link to='/login'>Login.</Link></p>
-        </div>
+            </div>
+  
     )
 }
