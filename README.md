@@ -1,7 +1,7 @@
 # Find Your Matcha
 
 ## Overview
- Find Your Matcha is a web platform that allows users to discover and review matcha cafes. Users can search for cafes that sell matcha, submit reviews, and explore an interactive map of matcha spots in their area. The application uses **Supabase** for backend services and **Mapbox API** for map integration.
+ Find Your Matcha is a web platform that allows users to discover and review matcha cafes. Users can search for cafes that sell matcha, submit reviews, and explore an interactive map of matcha spots in their area. The application uses **Supabase** for backend services and **Mapbox API** for map integration. This project was built during the 2025 cmd-f hackathon. 
 
 ## Features
 - **User Authentication**: Register and log in to leave reviews.
@@ -26,7 +26,7 @@
 1. Clone the repository:
    ```sh
    git clone https://github.com/justinnebaltazar/find-your-matcha.git
-   cd matcha-review-app
+   cd find-your-matcha
    ```
 2. Install dependencies:
    ```sh
@@ -36,9 +36,9 @@
    - Create a `.env` file in the root directory
    - Add your **Supabase URL**, **Supabase Anon Key**, and **Mapbox API Key**:
      ```sh
-     REACT_APP_SUPABASE_URL=your_supabase_url
-     REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
-     REACT_APP_MAPBOX_ACCESS_TOKEN=your_mapbox_access_token
+     VITE_SUPABASE_URL=your_supabase_url
+     VITE_SUPABASE_KEY=your_supabase_anon_key
+     VITE_MAPBOX_KEY=your_mapbox_access_token
      ```
 
 ### Running the App
@@ -51,7 +51,7 @@ The app will be available at `http://localhost:5173`.
 ## What We Learned
 Through building this project, we gained experience in:
 - **Figma Prototyping**: Designing UI and interactive elements.
-- **CSS and Layouts**: Understanding container positioning and styling components.
+- **React**: Gaining experience with component-based architecture, state management, and handling user interactions.
 - **Supabase Integration**: Managing authentication and database interactions.
 - **Mapbox API**: Displaying interactive maps and fetching location-based data.
 
@@ -64,6 +64,3 @@ Through building this project, we gained experience in:
 - Anita Leung
 - Justinne Baltazar
 - Rio Maruyama
-
-## License
-This project is licensed under the [MIT License](LICENSE).
