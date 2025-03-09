@@ -9,19 +9,20 @@ export const Home = () => {
            <div className={styles.title}>
                 <h1>find your matcha</h1>
            </div>
-           <br></br>
             <div className={styles.textContainer}>
-                <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam minus voluptatum velit quae asperiores, labore esse iste mollitia consequatur praesentium corrupti eum suscipit, fugiat, harum aliquid necessitatibus magni quasi reprehenderit!</p>
+                <p className={styles.desc}>Step into the world of Matcha and explore its rich, vibrant flavours like never before. Discover 
+                    everything from the hottest spots to hidden gem. Click below to get started!
+                </p>
             </div>
             <div className={styles.buttonsContainer}>
                 <ul className={styles.buttons}>
                     <li>
-                        <Link to="/link">log in</Link>
-                        </li>
-                    </ul>
+                        <Link className={styles.links} to="/login">log in</Link>
+                    </li>
+                </ul>
                 <ul className={styles.buttons}>
                     <li>
-                        <Link to="/register"> create an account</Link>
+                        <Link className={styles.links} to="/register"> create an account</Link>
                     </li>
                 </ul>
             </div>
