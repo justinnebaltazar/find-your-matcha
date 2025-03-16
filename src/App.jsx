@@ -40,6 +40,7 @@ function App() {
         <Route path="/dashboard" element={
           /* Wrapped components are not accesible unless authenticated */
           <Wrapper>
+            <Navbar/>
             <Dashboard/>
           </Wrapper>
         }/>
@@ -48,8 +49,10 @@ function App() {
 
         <Route path="/reviewform" element={
           /* Wrapped components are not accesible unless authenticated */
+          <Wrapper>
+            <Navbar/>
             <ReviewForm/>
-
+          </Wrapper>
         }/>
 
         <Route path="/matchareviews" element={<MatchaReviewsWrapper />} />

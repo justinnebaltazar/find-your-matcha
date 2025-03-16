@@ -12,6 +12,9 @@ const Navbar = () => {
 
       <div className={styles.navCenter}>
         <ul className={styles.navLinks}>
+        {location.pathname !== "/" && (<li>
+            <Link className={styles.links} to='/'>home</Link>
+          </li>)}
           <li>
             <Link className={styles.links} to='/cafes'>cafes</Link>
           </li>
@@ -26,7 +29,6 @@ const Navbar = () => {
           <li>
             <Link className={styles.links} to='/login'>login</Link>
           </li>
-         
         </ul>
       </div>
     </nav>
